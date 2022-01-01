@@ -110,7 +110,7 @@
 					<span class="small">共评论了 0 条</span>
 				</template>
 			</van-cell>
-			<van-cell title="我的签到" :border="false" @click="cellClick">
+			<van-cell title="我的签到" :border="false" :to="{name: 'Sign'}">
 				<template #icon>
 					<div class="left-icon">
 						<van-image width="17" height="17" :src="Sign"/>
