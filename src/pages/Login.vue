@@ -7,6 +7,15 @@
 				@click-left="onClickLeft"
 			/>
 		</van-config-provider>
+		<div class="slogan-wrapper">
+			<div class="logo">
+				<van-image width="40" height="40" :src="logo" />
+			</div>
+			<div class="slogan">
+				<div class="title">DuDuDu</div>
+				<div class="slogan-text">书友最喜欢的小说网站</div>
+			</div>
+		</div>
 		<div class="login-form" v-if="isLogin">
 			<van-form @submit="onSubmitLogin">
 				<van-cell-group inset>
@@ -73,9 +82,12 @@
 </template>
 
 <script setup>
-	import { useRouter } from 'vue-router'
+	import { useRouter, useRoute } from 'vue-router'
 	import { ref } from 'vue'
+	import logo from '../assets/images/logo.png'
+	import store from 'store'
 
+	const route = useRoute()
 	const router = useRouter()
 	const isLogin = ref(true)
 	const username = ref('')
@@ -95,8 +107,12 @@
 		return val === password.value
 	}
 
-	const onSubmitLogin = (values) => {
-		console.log('submit', values);
+	const onSubmitLogin = async (values) => {
+		store.set('user', values)
+		const {redirect} = route.query
+		if (redirect) {
+			await router.replace({path: redirect})
+		}
 	}
 
 	const onSubmitRegister = (values) => {
@@ -106,6 +122,27 @@
 
 <style lang="less" scoped>
 	.login-page{
+		.slogan-wrapper{
+			display: flex;
+			justify-content: center;
+			padding: 3.3125rem 0;
+			.logo{
+				margin-right: .4375rem;
+			}
+			.slogan{
+				.title{
+					font-size: 1.3125rem;
+					font-weight: 700;
+					color: #373737;
+				}
+				.slogan-text{
+					font-size: 1rem;
+					color: #373737;
+					transform: scale(.6);
+					margin-left: -2rem;
+				}
+			}
+		}
 		.no-account{
 			font-size: .875rem;
 			color: #f55;

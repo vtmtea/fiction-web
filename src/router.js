@@ -33,7 +33,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-    if (mustLoginPage.indexOf(to.name) > -1 && !store.get('user')) next({name: 'Login'})
+    if (mustLoginPage.indexOf(to.name) > -1 && !store.get('user')) next({name: 'Login', query: {redirect: to.fullPath}})
     else next()
 })
 
