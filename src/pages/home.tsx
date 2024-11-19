@@ -1,6 +1,7 @@
 import { Image, Search, Sticky, Swiper, Tabbar } from "react-vant";
 import { BarChartO, Contact } from "@react-vant/icons";
 import { useNavigate } from "react-router-dom";
+import { Footer } from "../components/footer.tsx";
 
 export const HomePage = () => {
     const navigate = useNavigate();
@@ -31,6 +32,7 @@ export const HomePage = () => {
             </Swiper>
         </div>
 
+        <Footer />
         <Tabbar className="horizontal-tabbar">
             <Tabbar.Item icon={<BarChartO/>} onClick={() => navigate('/shelf')}>
                 <span className="tabbar-item-text">书架</span>
