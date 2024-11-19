@@ -27,6 +27,14 @@ export default tseslint.config(
 				'warn',
 				{allowConstantExport: true},
 			],
+			'@typescript-eslint/no-unused-expressions': [
+				'error',
+				{
+					allowShortCircuit: true, // 允许短路表达式
+					allowTernary: true, // 允许三元表达式
+					allowTaggedTemplates: true // 允许标记模板
+				}
+			]
 		},
 	},
 )
