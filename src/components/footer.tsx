@@ -9,29 +9,40 @@ export const Footer = () => {
 	};
 
 	return (
-		<Space direction="vertical" justify="center" align="center" block={true}>
+		<Space
+			direction="vertical"
+			justify="center"
+			align="center"
+			block={true}
+		>
 			<div>
 				<strong>登录后获得更多特色功能· </strong>
-				<Typography.Link onClick={() => navigate("/login")}>
-					立即登录
-				</Typography.Link>
+				<Typography.Link onClick={() => navigate("/login")}>立即登录</Typography.Link>
 				<Divider />
 			</div>
 			<Space gap={50}>
-				<Typography.Link type={"secondary"} onClick={fn}>
+				<Typography.Link
+					type={"secondary"}
+					onClick={fn}
+				>
 					客户端
 				</Typography.Link>
 				<Typography.Link type={"secondary"}>触屏版</Typography.Link>
-				<Typography.Link type={"secondary"} onClick={fn}>
+				<Typography.Link
+					type={"secondary"}
+					onClick={fn}
+				>
 					客服帮助
 				</Typography.Link>
 				<Typography.Link type={"secondary"}>搜索</Typography.Link>
 			</Space>
-			<Typography.Text type={"secondary"}>
+			<Typography.Text
+				type={"secondary"}
+				className={"copyright"}
+			>
 				{" "}
 				copyright © 2002-2024
 			</Typography.Text>
 		</Space>
-
 	);
 };

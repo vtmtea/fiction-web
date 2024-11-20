@@ -1,5 +1,9 @@
 .header {
     padding: .12rem;
+
+    &.bg-color {
+        background-color: #ffffff;
+    }
 }
 
 .swiper-container {
@@ -17,6 +21,32 @@
     }
 }
 
+.home-nav {
+    padding: .12rem;
+    border-radius: .1rem;
+}
+
+.rank-number {
+    color: #ccc;
+    width: .16rem;
+    height: .16rem;
+    font-weight: 400;
+    font-size: .14rem;
+    text-align: center;
+    line-height: 16px;
+    margin-right: .04rem;
+
+    &.top {
+        color: #fff;
+        background: linear-gradient(180deg, #fc3c48 -3.91%, #ffaeb4 96.09%);
+        border-radius: .05rem 0;
+    }
+}
+
+.rank-author {
+    margin-top: .1rem;
+}
+
 .tabbar-item-text {
     font-weight: 600;
     color: #000;
@@ -30,4 +60,7 @@
             margin-bottom: 0;
         }
     }
+}
+.copyright {
+    padding-bottom: .16rem;
 }

@@ -1,6 +1,6 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.tsx";
 import { ConfigProvider } from "react-vant";
 
 const themeVars = {
@@ -8,13 +8,15 @@ const themeVars = {
 	"--rv-tabbar-item-font-size": ".16rem",
 	"--rv-tabbar-item-active-color": "#000",
 	"--rv-tabbar-item-text-color": "#000",
-	"--rv-typography-link-color": "#5790df"
-}
+	"--rv-typography-link-color": "#5790df",
+	"--rv-search-content-background-color": "#fff",
+	"--rv-cell-horizontal-padding": 0,
+};
 
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
 	<StrictMode>
 		<ConfigProvider themeVars={themeVars}>
-			<App/>
+			<App />
 		</ConfigProvider>
 	</StrictMode>,
-)
+);
