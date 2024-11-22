@@ -1,4 +1,4 @@
-import { Card, Cell, Flex, Image, Space, Tabs, Typography } from "react-vant";
+import { Card, Cell, Flex, Image, Space, Tabs, Toast, Typography } from "react-vant";
 import { Arrow } from "@react-vant/icons";
 import classNames from "classnames";
 
@@ -99,6 +99,7 @@ export const RecommendCard = (props: IRecommendCardProps) => {
 									src={book.coverImageUrl}
 								/>
 							}
+							onClick={() => Toast.info("开发中...")}
 						/>
 					))
 				) : (
@@ -162,6 +163,7 @@ export const RecommendCard = (props: IRecommendCardProps) => {
 													src={book.coverImageUrl}
 												/>
 											}
+											onClick={() => Toast.info("开发中...")}
 										/>
 									</Flex.Item>
 								))}

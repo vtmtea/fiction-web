@@ -21,8 +21,7 @@ export const Header = () => {
 	return (
 		<Sticky onScroll={scrollHandler}>
 			<div className={classNames("header", { "bg-color": isScroll })}>
-				<Flex justify={"between"}>
-					Reader
+				<Flex justify={"end"}>
 					{isScroll && (
 						<Search
 							fontSize={".24rem"}
